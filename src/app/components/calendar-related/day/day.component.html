@@ -1,0 +1,37 @@
+<div class="dayDiv" (click)="onDayClick()">
+    <p style="height: 100px;">{{day}}</p>
+</div>
+<!-- 
+<p-dialog header="header" (onHide)="onDialogHide()" [(visible)]="selected"
+    class="dayCard" [maximizable]="false" [baseZIndex]="50"
+    [dismissableMask]="true" [draggable]="false"
+    [style]="{width: '70vw', height: '70vh'}" [contentStyle]="{overflow: 'hidden'}"
+    [closable]="true">
+    
+    <p-tabView [style]="{height: '100%'}">
+        
+        <p-tabPanel header="Eventos Destacados" [ngStyle]="{height: '100%'}">
+            <p-scrollpanel [style]="{width: '100%', height: '50vh', display: 'flex'}">
+                
+                <p-listbox [(ngModel)]="selectedEvent" [options]="events" [style]="{width: '100%'}">
+                    <ng-template let-event pTemplate="item">
+                        <div style="width: 100%; height: 15%; border: 1px solid red; padding: 10px;">
+                            <p>{{ event.dateTime }}</p>
+                            <p-button type="p-button" icon="pi pi-calendar" label="Ver Hora" (click)="showTime()"></p-button>
+                        </div>
+                    </ng-template>
+                </p-listbox>
+                
+            </p-scrollpanel>
+        </p-tabPanel>
+        
+        <p-tabPanel header="Otro Panel">
+            <p>Contenido adicional aquí.</p>
+        </p-tabPanel>
+        
+        <p-tabPanel header="Más Panel">
+            <p>Contenido adicional aquí.</p>
+        </p-tabPanel>
+        
+    </p-tabView>
+</p-dialog> -->

@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+/* src/styles.css o src/styles.scss */
+
+:root {
+    --primary-color: #DB2121;
+    --button-border: #3F2525;
+}
+
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.p-button{
+    background: var(--primary-color) !important;
+    border-color: var(--button-border) !important;
+}
+
+body{
+    overflow: hidden;
+    height: 99vh;
+    width: 97.666vw;
+}
+

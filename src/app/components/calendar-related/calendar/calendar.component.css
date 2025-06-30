@@ -1,0 +1,42 @@
+#calendarBigDiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    border: 1px solid black;
+    height: 100%;
+}
+
+.dia{
+    display: flex;
+    justify-content: flex-start;
+    grid-row: auto;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    cursor: pointer;
+}
+
+.dia:hover{
+    filter: brightness(1.75);
+}
+
+.subDiaDiv{
+    width: 100%;
+}
+
+.subDiaDiv:hover{
+
+}
+
+:host ::ng-deep p-card{
+    width: 100%;
+    height: 100%;
+}
+:host ::ng-deep .p-card-content{
+    height: 100%;
+}
+
+.p-card .p-component{
+    height: 100%;
+}
+:host ::ng-deep .p-card-body{
+}

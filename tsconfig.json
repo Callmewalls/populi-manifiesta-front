@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist/out-tsc",
+    "baseUrl": "./",
+    "lib": [
+      "es2020",
+      "dom"
+    ]
+  },
+  "angularCompilerOptions": {
+    "enableIvy": true,
+    "strictTemplates": true
+  },
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.ts",
+    "src/**/*.html",
+    "src/**/*.css"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

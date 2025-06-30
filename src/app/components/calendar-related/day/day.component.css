@@ -1,0 +1,19 @@
+p{
+    margin-left: 2%;
+    height: 100%;
+}
+
+.dayDiv{
+    height: 100%;
+    width: 100%;
+    background-color: gainsboro;
+}
+
+.dayCard{
+    position: absolute;
+    z-index: 50;
+}
+
+.p-tabview .p-tabview-panels {
+    padding: 1rem 0 0 0;
+}

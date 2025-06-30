@@ -1,0 +1,110 @@
+#home{
+    width: 100vw;
+    height: 100vh;
+    overflow: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#homeImg{
+    height: 100vh;
+}
+
+
+#homeBigDiv{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#appearingDiv{
+    width: 80%;
+}
+
+#calendarDiv{
+    width: 100%;
+    height: 50vh;
+}
+
+.divInsideRight{
+    background-color: #b22222;
+    height: 100%;
+}
+
+#scrollDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1vh;
+}
+
+#overlay {
+    position: fixed;
+    top: 8%;
+    right: 0;
+    width: 100vw;
+    height: 92vh;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+    transform: translateX(100%); /* fuera de la pantalla hacia la derecha */
+    transition: transform 0.4s ease-in-out;
+    z-index: 1000;
+}
+
+#overlay.visible {
+    transform: translateX(0); /* entra a la pantalla */
+}
+
+::ng-deep .p-scrollpanel-bar-y{
+    background-color: rebeccapurple !important;
+}
+
+
+#dayDescription{
+    width: 100%;
+    height: 100%;
+}
+
+
+.closeCrossDiv{
+    position: fixed;
+    top: 50%;
+    right: -2.5rem; /* o '2%' si prefieres usar porcentaje */
+    transform: translateY(-50%); /* CENTRADO VERTICAL REAL */
+    
+    width: 5rem;
+    height: 5rem;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    z-index: 11;
+}
+.returnArrowDiv {
+    position: fixed;
+    top: 50%;
+    right: -2.5rem; /* o '2%' si prefieres usar porcentaje */
+    transform: translateY(-50%); /* CENTRADO VERTICAL REAL */
+    
+    width: 5rem;
+    height: 5rem;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    z-index: 11;
+}
+
+
+i{
+    width: 5rem;
+    margin-left: 1vw;
+}

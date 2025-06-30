@@ -1,0 +1,91 @@
+<div id="bigDiv">
+    <div id="imgDiv">
+        <img src="{{description.imageUrl}}">
+    </div>
+    <div id="objectivesDiv">
+        <p-scrollpanel [style]="{width: 'auto', height: '100%'}">
+            <br>
+            <div id="objectivesTitle">
+                <div>
+                    <span>
+                        <h2>
+                            {{description.eventName}}
+                        </h2>
+                    </span>
+                </div>
+            </div>
+            <br>
+            <div id="objectivesPanelDiv">
+                <p>
+                    {{description.objectivesText}}
+                </p>
+                <br>
+            </div>
+        </p-scrollpanel>
+    </div>
+    <div id="dataDiv">
+        <div id="dataText">
+            <div id="infoText">
+                <div id="nameDiv">
+                    <h2>Información</h2>
+                </div>
+                <div id="labelsDiv">
+                    <div class="labelDiv">
+                        <label>Organizador:
+                            {{this.event.organizer.name}}</label>
+                    </div>
+
+                    <div class="labelDiv">
+                        <label>Fecha inicio: {{this.initDate}}</label>
+                    </div>
+
+                    <div class="labelDiv">
+                        <label>Fecha fin: {{this.endDate}}</label>
+                    </div>
+
+                    <div class="labelDiv">
+                        <h3 style="margin-bottom: 5%;">Redes Sociales</h3>
+                        <div id="rrssDiv">
+                            <div id="rrss">
+                                <a href="https://www.twitter.com"
+                                    target="_blank">
+                                    <div>
+                                        <i class="pi pi-twitter"></i>
+                                    </div>
+                                </a>
+                                <a href="https://www.intagram.com"
+                                    target="_blank">
+                                    <div>
+                                        <i class="pi pi-instagram"></i>
+                                    </div>
+                                </a>
+                                <a href="https://www.facebook.com"
+                                    target="_blank">
+                                    <div>
+                                        <i class="pi pi-facebook"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div>
+                                <label>Nº firmas:{{this.event.signs}}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mapDiv">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6159.714636870136!2d-0.3774896472156601!3d39.4725519616934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6048ad7bf45aab%3A0x2ba4baea5a36e1e2!2sAyuntamiento%20de%20Valencia!5e0!3m2!1ses!2ses!4v1750019538018!5m2!1ses!2ses"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    <div id="textDiv">
+        <div id="textSmallDiv">{{this.description.eventDescription}}</div>
+    </div>
+</div>

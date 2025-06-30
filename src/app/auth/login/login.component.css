@@ -1,0 +1,52 @@
+#logInComponentDiv{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+}
+
+#loginBox{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#formDiv{
+    border: 1px solid var(--primary-color);
+    padding: 5%;
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#welcomeDiv{
+    margin-bottom: 10%;
+}
+
+#emailDiv{
+    width: 100%;
+    margin-bottom: 10%;
+}
+
+#passwordDiv{
+    width: 100%;
+    margin-bottom: 10%;
+}
+
+#buttonDiv{
+    width: 100%;
+}
+
+input{
+    width: 100%;
+}
+
+::ng-deep .p-button{
+    width: 100% !important;
+}

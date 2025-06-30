@@ -1,0 +1,31 @@
+<p-card>
+    <ng-template #header pTemplate="header">
+        <div class="p-card-header">
+            <span>Calendario de eventos</span>
+        </div>
+    </ng-template>
+    <ng-template #content pTemplate="content">
+        <div>
+            <div id="createButtonDiv">
+                <p-button label="Crear evento">
+
+                </p-button>
+            </div>
+        </div>
+        <div id="calendarBigDiv">
+            <div class="dia" *ngFor="let day of this.days">
+                <div class="subDiaDiv" *ngIf="day != undefined">
+                    <app-day (dayClicked)="emitDayClicked($event)" [day]="day" [month]="month" [year]="year"></app-day>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-card>
+<p-dialog header="header" [visible]="true" [modal]="true" [dismissableMask]="true" [style]="{width: '60vw', minWidth: 'minWidth'}">
+    content
+    <p-footer>
+    </p-footer>
+    <ng-template pTemplate="footer">
+        <button type="button" (click)="initCreateEvent()" pButton icon="" [label]="'Crear'"></button>
+    </ng-template>
+</p-dialog>

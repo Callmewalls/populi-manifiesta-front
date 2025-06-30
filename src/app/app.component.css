@@ -1,0 +1,21 @@
+::ng-deep * {
+      
+    margin: 0;
+    padding: 0;
+}
+
+::ng-deep body{
+  width: 100%;
+}
+
+#navigator{
+  display: flex;
+  height: 10vh;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid black;
+}
+
+#routerOutletDiv{
+  height: 90vh;
+}
