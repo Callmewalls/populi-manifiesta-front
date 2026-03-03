@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+/* src/styles.css o src/styles.scss */
+
+@use "./components/datePicker";
+@use "./components/editor";
+@use "./variables";
+
+* {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.p-button {
+  background: var(--primary-color) !important;
+  border-color: var(--button-border) !important;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  overflow: hidden;
+}
+
+.marker-bubble {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 0.2s ease;
+
+  i {
+    font-style: normal;
+  }
+}
+
+.marker-bubble:hover {
+  transform: scale(1.1);
+}

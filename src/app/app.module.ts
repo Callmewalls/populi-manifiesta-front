@@ -1,4 +1,4 @@
-import { HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { AppComponent } from './app.component';
@@ -6,55 +6,54 @@ import { HomeComponent } from './components/home/home.component';
 import { NgIf, NgFor, CommonModule } from '@angular/common';
 import { DividerModule } from 'primeng/divider';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
-import { CalendarComponent } from './components/calendar-related/calendar/calendar.component';
-import { DayDescriptionComponent } from './components/calendar-related/day-description/day-description.component';
 import { HomeEventsCardComponent } from './components/home-news-card/home-events-card.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
-import { DayComponent } from './components/calendar-related/day/day.component';
-import { RouterModule, RouterOutlet, provideRouter } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { NavigatorComponent } from './components/navigator/navigator.component';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
 import { routes } from 'src/app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import Aura from '@primeng/themes/aura';
 import { DialogModule } from 'primeng/dialog';
+import { TabsModule } from 'primeng/tabs';
+import { CalendarModule } from './components/calendar-related/calendar.module';
+import { MapComponent } from './components/map-related/map/map.component';
+import { EventsModule } from './components/event-related/event.module';
+import { GoogleMapsModule, MapMarker } from '@angular/google-maps';
+import { EventListComponent } from "./components/event-related/event-list/event-list.component";
 
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        DayDescriptionComponent,
-        CalendarComponent,
-        DayComponent,
         LayoutComponent,
         HomeEventsCardComponent,
-        NavigatorComponent],
+        NavigatorComponent,
+        MapComponent
+    ],
     exports: [
-        AppComponent,
-        HomeComponent,
-        DayDescriptionComponent,
-        CalendarComponent,
-        DayComponent,
-        LayoutComponent,
-        HomeEventsCardComponent,
-        NavigatorComponent],
+    ],
     imports: [
+        TabsModule,
+        CalendarModule,
         ScrollPanelModule,
         DividerModule,
         NgIf,
         NgFor,
         CommonModule,
         ButtonModule,
-        CardModule, 
+        CardModule,
         RouterOutlet,
         BrowserAnimationsModule,
         HttpClientModule,
         RouterModule.forRoot(routes),
-        DialogModule
+        DialogModule,
+        EventsModule,
+        GoogleMapsModule,
+        MapMarker
     ],
     providers: [
         {
@@ -64,9 +63,9 @@ import { DialogModule } from 'primeng/dialog';
         },
         providePrimeNG({
             theme: {
-              preset: Aura
+                preset: Aura
             }
-          })
+        })
     ],
     bootstrap: [AppComponent]
 })

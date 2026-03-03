@@ -1,0 +1,71 @@
+<div id="registerComponentDiv">
+  <div id="topDiv">
+    <div id="registryDiv">
+      <a [routerLink]="'/login'">
+        <button pButton label="Iniciar sesión"></button>
+      </a>
+    </div>
+  </div>
+  <div id="registerBox">
+    <div id="formDiv">
+      <div id="welcomeDiv">
+        <h1>Bienvenido</h1>
+      </div>
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <h2>Crear cuenta</h2>
+
+        <div class="form-group">
+          <input type="text" placeholder="Nombre" formControlName="firstName" />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="text"
+            placeholder="Apellidos"
+            formControlName="lastName"
+          />
+        </div>
+
+        <div class="form-group">
+          <input type="email" placeholder="Email" formControlName="email" />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="password"
+            placeholder="Contraseña"
+            formControlName="password"
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="password"
+            placeholder="Confirmar contraseña"
+            formControlName="confirmPassword"
+          />
+          @if (
+            registerForm.hasError("passwordMismatch") &&
+            registerForm.get("confirmPassword")?.touched
+          ) {
+            <div class="error">Las contraseñas no coinciden</div>
+          }
+        </div>
+
+        <div class="terms">
+          <input type="checkbox" formControlName="terms" />
+          <label>Acepto los términos y condiciones</label>
+        </div>
+        @if (errorMessage) {
+          <div class="error">
+            {{ errorMessage }}
+          </div>
+        }
+
+        <button type="submit" [disabled]="loading">
+          {{ loading ? "Creando cuenta..." : "Registrarse" }}
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

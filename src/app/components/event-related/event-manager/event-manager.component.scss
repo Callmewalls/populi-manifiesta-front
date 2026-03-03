@@ -1,0 +1,318 @@
+#bigDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+}
+
+#eventNameDiv {
+  grid-column: 1/3;
+  grid-row: 1;
+  z-index: 30;
+  height: fit-content;
+}
+
+#imgDiv {
+  width: 100%;
+  height: 40vh;
+  grid-column: 1/3;
+  grid-row: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 1lh;
+  margin-left: 0;
+}
+
+#imgDiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  backdrop-filter: blur(2px);
+}
+
+#imgDiv.dragover {
+  border: 2px dotted black;
+}
+
+#imgDiv img:hover {
+  filter: brightness(1.1);
+}
+
+::ng-deep .p-fileupload-header {
+  padding: 0% !important;
+}
+
+::ng-deep .p-fileupload-content {
+  padding: 0% !important;
+}
+
+::ng-deep .p-fileupload-advanced {
+  border: none;
+}
+
+#folderDiv {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px dotted black;
+
+  button {
+    background-color: inherit !important;
+    color: black;
+    border: none;
+  }
+
+  i {
+    font-size: 10vw;
+    border: none;
+  }
+}
+
+#folderDiv.dragover {
+  scale: 1.2;
+  transition: scale 0.3s;
+}
+
+#folderDiv:hover {
+  scale: 1.2;
+  transition: scale 0.3s;
+}
+
+#objectivesDiv {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1lh;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  background-color: white;
+  border-top: 2px solid black;
+}
+
+#objectivesEditor{
+  margin-right: 1lh;
+}
+
+h2 {
+  font-size: 1rem;
+  margin-top: 0.3lh;
+}
+
+#editorDiv{
+  height: 100%;
+}
+
+::ng-deep .p-editor-toolbar {
+  padding: 0 !important;
+}
+
+.p-editor{
+  height: 100% !important;
+}
+
+#descriptionEditor {
+  height: 90% !important;
+}
+
+#insideEditor {
+  height: 100% !important;
+}
+
+#dataDiv {
+  display: flex;
+  flex-direction: column;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+}
+
+#infoText {
+  width: 100%;
+}
+
+#firstRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1lh;
+  height: fit-content;
+}
+
+#infoTitleDiv {
+  margin-left: 1lh;
+}
+
+#organizerDiv {
+  display: flex;
+  align-items: end;
+  height: 100%;
+  margin-left: 2lh;
+
+  label {
+    font-size: 0.8rem;
+  }
+}
+
+#secondRow {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1lh;
+  gap: 1lh;
+  width: 100%;
+}
+
+#datesDiv{
+  display: flex;
+  flex-direction: row;
+  gap: 1lh;
+  width: fit-content;
+  margin-right: 5lh;
+}
+
+.labelDiv {
+  width: 100%;
+
+  label {
+    font-size: 0.8rem;
+  }
+}
+
+.dateLabelDiv {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.5rem;
+  width: 20%;
+}
+.dateLabelDiv ::ng-deep input.p-inputtext::placeholder {
+  font-size: 0.7rem;
+}
+
+#rrssDiv {
+  margin-right: 5lh;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+#rrss {
+  flex-direction: row;
+  display: flex;
+
+  a {
+    margin-right: 1lh;
+  }
+}
+
+#signsDiv{
+  span{
+    font-size: 1rem;
+  }
+}
+
+#mapAutocompleteDiv {
+  z-index: 20;
+  position: relative;
+  top: 78%;
+  left: 30%;
+}
+
+#mapDiv{
+  margin: 0lh 0lh 1lh 1lh;
+}
+
+.map-search {
+  position: absolute;
+}
+
+i {
+  margin-left: 2%;
+}
+
+:host ::ng-deep .p-scrollpanel-content {
+  height: 100%;
+  width: 100%;
+  padding: 0%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.custom-marker {
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  border: 2px solid white;
+}
+
+.reasonItem {
+  margin-bottom: 1vh;
+}
+
+#textDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 1lh;
+  grid-column: 1/3;
+  grid-row: 3/7;
+  border-top: 2px solid black;
+  padding: 2%;
+  min-height: 80vh;
+}
+
+#textSmallDiv {
+  background-color: white;
+  box-shadow: 5px 5px 5px;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  height: 100% !important;
+}
+
+#createButtonBigDiv {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  z-index: 20;
+}
+
+#createButtonDiv {
+  position: relative;
+}
+
+/* Pantallas pequeñas */
+
+.mobileDates{
+
+  ::ng-deep button{
+    padding: 0.3lh 0.5lh 0.3lh 0.5lh;
+    border-radius: var(--p-datepicker-dropdown-border-radius);
+  }
+
+  ::ng-deep .p-datepicker-input{
+    display: none !important;
+  }
+
+  ::ng-deep svg{
+    width: 1.5rem !important;
+    height: auto !important;
+  }
+
+}

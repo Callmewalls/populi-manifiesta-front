@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { AuthControllerService } from '../connectors/api/api/authController.service';
-import { Credentials } from '../connectors/api';
+import { Credentials } from '../connectors/api/model/credentials';
+import { LoginRequestWeb } from '../connectors/api';
 
 @Injectable({
   providedIn: 'root'
@@ -17,12 +18,10 @@ export class AuthService {
     private authConnector: AuthControllerService
   ) { }
 
-  login(credentials: Credentials) {
-    console.log(credentials);
-    
+  login(credentials: LoginRequestWeb) {
     return this.authConnector.login(credentials).pipe(
       tap(response => {
-        this.setToken(response);
+        this.setToken(response.token);
       })
     );
   }

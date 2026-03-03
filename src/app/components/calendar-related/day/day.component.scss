@@ -1,0 +1,98 @@
+p {
+  margin-left: 2%;
+  width: 5vw;
+}
+
+th {
+  font-size: 1rem;
+}
+
+// .dayDiv {
+//   color: white;
+//   height: 12vh;
+//   width: 100%;
+//   border-radius: 14px;
+//   padding: 0.6rem 0.8rem;
+//   cursor: pointer;
+//   position: relative;
+//   overflow: hidden;
+//   border: 1px solid #e5e5e5;
+
+//   /* Gradiente tipo card del ejemplo */
+//   background:
+//     /* Elipse superior izquierda */
+//     radial-gradient(
+//       ellipse 100% 100% at top left,
+//       rgb(98,0,234) 0%,      /* inicio color */
+//       var(--primary-color) 40%,
+//       transparent 60%
+//     ),
+//     /* Elipse inferior derecha */
+//     radial-gradient(
+//       ellipse 100% 100% at bottom right,
+//       #ec407a 0%,
+//       var(--primary-color) 40%,
+//       transparent 60%
+//     ),
+//     /* Fondo blanco */
+//     white;
+// }
+
+.dayDiv {
+  color: black;
+  height: 12vh;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+
+  --b: 0.5em; /* border width */
+  --c: 3em; /* corner size */
+  --r: 2em; /* corner rounding */
+  place-self: center; /* middle align along both axes */
+  /* reserve space for border*/
+  border: solid var(--b) #0000;
+  padding: 0.5lh;
+  max-width: 23em;
+
+  font:
+    1.25em ubuntu,
+    sans-serif;
+
+  &::before {
+    position: absolute;
+    z-index: -1; /* place behind text content */
+    /* cover border-box = outside padding box by border-width */
+    inset: calc(-1 * var(--b));
+    border: inherit; /* inherit border space */
+    border-radius: 14px;
+    /* the gradient used */
+    background: linear-gradient(grey, black) border-box;
+    mask: 
+			/* the corners */
+      conic-gradient(from -90deg at var(--c) var(--c), red 25%, #0000 0) 0 0 /
+        calc(100% - var(--c)) calc(100% - var(--c)) border-box subtract,
+      /* padding-box area subtracted from corner squares */
+      conic-gradient(red 0 0) padding-box;
+    content: "";
+  }
+}
+
+.dayDiv.many-events {
+  background-image: url("/assets/images/hellfire.gif"),
+    radial-gradient(circle, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+    linear-gradient(135deg, #ffffff 0%, #f3f3f3 100%);
+  background-repeat: no-repeat;
+  border-radius: 14px;
+  background-position: center center;
+}
+
+.dayDiv.many-events::before {
+  display: none;
+}
+
+p-tag {
+  background: url("/assets/images/colorful-background.webp");
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

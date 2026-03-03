@@ -1,19 +1,20 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DayDescriptionControllerService, DayDescriptionDto, ProgrammedEventDto, ProgrammedEventOrganizerDto } from 'src/app/connectors/api';
+import { EventCompleteResponse, EventOrganizerResponse } from 'src/app/connectors/api';
+import { EventDescription } from 'src/app/connectors/api/model/eventDescription';
 
 @Component({
   selector: 'app-home-news',
   templateUrl: './home-events-card.component.html',
-  styleUrls: ['./home-events-card.component.css'],
+  styleUrls: ['./home-events-card.component.scss'],
   standalone: false
 })
 export class HomeEventsCardComponent implements OnInit{
 
 
-  @Input("event") public event: ProgrammedEventOrganizerDto;
-  dayDescription: DayDescriptionDto;
+  @Input("event") public event: EventCompleteResponse | null = null;
+  eventDescription: EventDescription;
+  
   constructor(
-    private dayDescriptionService: DayDescriptionControllerService
   ){
 
   }
@@ -21,13 +22,7 @@ export class HomeEventsCardComponent implements OnInit{
     console.log(this.event);
     
     if(this.event){
-      this.dayDescriptionService.getDayDescriptionForEvent(this.event.id).subscribe(
-        descriptions => {
-          console.log(descriptions);
-          
-          this.dayDescription = descriptions;
-        }
-      )
+      this.eventDescription = this.event.eventDescription;
     }
   }
 }

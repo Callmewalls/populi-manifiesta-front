@@ -1,20 +1,38 @@
 <div id="logInComponentDiv">
-    <div id="loginBox">
-        <div id="formDiv">
-            <div id="welcomeDiv">
-                <h1>Bienvenido</h1>
-            </div>
-            <form [formGroup]="loginForm" (submit)="login()">
-                <div id="emailDiv">
-                    <input formControlName="email" [placeholder]="'Email'" pInputText type="text" />
-                </div>
-                <div id="passwordDiv">
-                    <input formControlName="password" [placeholder]="'Contraseña'" pInputText type="password" />
-                </div>
-                <div id="buttonDiv">
-                    <button pButton type="submit" label="Iniciar Sesión"></button>
-                </div>
-            </form>
-        </div>
+  <div id="topDiv">
+    <div id="registryDiv">
+      <a [routerLink]="'/register'">
+        <button pButton label="Registrarse"></button>
+      </a>
     </div>
+  </div>
+  <div id="loginBox">
+    <div id="formDiv">
+      <div id="welcomeDiv">
+        <h1>Bienvenido</h1>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div id="emailDiv">
+          <input
+            formControlName="email"
+            [placeholder]="'Email'"
+            pInputText
+            type="text"
+          />
+        </div>
+        <div id="passwordDiv">
+          <input
+            formControlName="password"
+            [placeholder]="'Contraseña'"
+            pInputText
+            type="password"
+          />
+        </div>
+        <div id="buttonDiv">
+          <button pButton type="submit" label="Iniciar Sesión"></button>
+        </div>
+        <a href="/recover-password">¿Has olvidado tu contraseña?</a>
+      </form>
+    </div>
+  </div>
 </div>

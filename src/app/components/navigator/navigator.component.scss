@@ -1,0 +1,120 @@
+.navbar {
+  width: 15vw;
+  height: 100vh;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  position: absolute;
+  align-items: center;
+  background-color: var(--primary-color); /* Rojo fuego */
+  color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#navBarDiv {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  font-size: 1.2vw;
+  transition: transform 0.2s ease-in-out;
+  margin: 1.5lh 0.5lh 0.5lh 0.5lh;
+  width: 90%;
+  background-color: white;
+  border-radius: 5px;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.logo a {
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0.5lh;
+  border-radius: 5px;
+  transition: background-color 0.1s;
+  transition: color 0.1s;
+  align-items: center;
+  color: var(--primary-color);
+  container-name: sidebar;
+}
+
+.logo:hover {
+  // background-color: #b22222; /* Rojo oscuro */
+  transform: scale(1.1);
+  // color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#linksDiv {
+  width: 100%;
+  display: flex;
+  margin: 5lh 0lh 0lh 5lh;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  margin-right: 1lh;
+}
+
+.nav-links li {
+  transition: transform 0.2s ease-in-out;
+  border-bottom: 2px solid white;
+}
+
+.nav-links li:hover {
+  background-color: #8b0000; /* Rojo oscuro */
+  transform: scale(1.1);
+}
+
+.imgDiv {
+  width: 1.5lh;
+  height: 1.5lh;
+  border-radius: 100%;
+  background-color: grey;
+  object-fit: fill;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links a {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1lh;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.5lh 0.5lh 0.5lh 0;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  width: 7lh;
+  font-size: 1vw;
+}
+
+#logOutDiv {
+  width: 100%;
+  margin-top: 4lh;
+  padding-left: 2.5lh;
+
+  button {
+    background-color: white !important;
+    color: var(--primary-color);
+  }
+}
+
+#logOutButton:hover{
+  scale: 1.1;
+}

@@ -1,0 +1,200 @@
+<div>
+  <p-card>
+    <ng-template #content>
+      <form [formGroup]="form">
+        <div id="bigDiv">
+          <div id="eventNameDiv">
+            <input pInputText
+              id="eventNameInput"
+              [formControlName]="'eventName'"
+              placeholder="Nombre del evento" />
+          </div>
+          <div
+            id="imgDiv"
+            [style.background-image]="imgSrc ? 'url(' + imgSrc + ')' : 'none'"
+            (click)="imgSrc = null"
+            [class.dragover]="isDragOver"
+            (dragover)="onDragOver($event)"
+            (dragleave)="onDragLeave($event)"
+            (drop)="onDrop($event)"
+          >
+            @if (!imgSrc) {
+              <p-fileUpload
+                #fileUpload
+                name="file"
+                mode="advanced"
+                accept="image/*"
+                [auto]="true"
+                [showUploadButton]="false"
+                [showCancelButton]="false"
+                customUpload="true"
+                (uploadHandler)="onUpload($event)"
+              >
+                <ng-template #header></ng-template>
+                <ng-template #content>
+                  <div id="folderDiv">
+                    <button pButton (click)="fileUpload.choose()">
+                      <i class="pi pi-folder-plus"></i>
+                    </button>
+                  </div>
+                </ng-template>
+              </p-fileUpload>
+            } @else {
+              <img src="{{ imgSrc }}" />
+            }
+          </div>
+          <div id="objectivesDiv" (click)="toggleEditor('objectives')">
+            <div>
+              <span>
+                <h2>Objetivos del evento</h2>
+              </span>
+            </div>
+            <div id="editorDiv">
+              <p-editor
+                [readonly]="true"
+                [formControlName]="'objectivesText'"
+                [style]="{ 'margin-right': '1lh' }"
+              >
+                <ng-template #header></ng-template>
+              </p-editor>
+            </div>
+          </div>
+          <div id="dataDiv">
+            <div id="infoText">
+              <div id="firstRow">
+                <div id="infoTitleDiv">
+                  <h2>Información</h2>
+                </div>
+                <div id="organizerDiv">
+                  <span>Organizador:</span>
+                </div>
+              </div>
+              <div id="secondRow">
+                <div id="datesDiv" class="responsive-dates">
+                  <p-datepicker
+                    [ngClass]="{'mobileDates': (responsiveService.isMobile$ | async)}"
+                    [size]="'small'"
+                    inputId="calendar-init"
+                    appendTo="body"
+                    formControlName="initDate"
+                    [showTime]="true"
+                    hourFormat="24"
+                    [showIcon]="(isMobile$ | async) ?? false"
+                    [placeholder]="(responsiveService.isMobile$ | async) ? '' : 'Fecha inicio'"
+                  ></p-datepicker>
+
+                  <p-datepicker
+                    [ngClass]="{'mobileDates': (responsiveService.isMobile$ | async)}"
+                    [size]="'small'"
+                    inputId="calendar-end"
+                    appendTo="body"
+                    formControlName="endDate"
+                    [showTime]="true"
+                    hourFormat="24"
+                    [showIcon]="(isMobile$ | async) ?? false"
+                    [placeholder]="(responsiveService.isMobile$ | async) ? '' : 'Fecha fin'"
+                  ></p-datepicker>
+                </div>
+
+                <div id="rrssDiv">
+                  <div>
+                    <h3 style="margin-bottom: 5%">Redes Sociales</h3>
+                  </div>
+                  <div id="rrss">
+                    <a href="https://www.twitter.com" target="_blank">
+                      <div>
+                        <i class="pi pi-twitter"></i>
+                      </div>
+                    </a>
+                    <a href="https://www.intagram.com" target="_blank">
+                      <div>
+                        <i class="pi pi-instagram"></i>
+                      </div>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank">
+                      <div>
+                        <i class="pi pi-facebook"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div id="signsDiv">
+                  <h3>Nº firmas:</h3>
+                  <span>1234</span>
+                </div>
+              </div>
+            </div>
+
+            <div id="mapDiv">
+              <div id="mapAutocompleteDiv">
+                <div class="map-search">
+                  <div
+                    #autocompleteContainer
+                    class="autocomplete-container"
+                  ></div>
+                </div>
+              </div>
+
+              <!-- Mapa -->
+              <google-map
+                #googleMap
+                height="50vh"
+                width="100%"
+                [center]="center"
+                [zoom]="zoom"
+                mapId="73319fd6e91127469a3878b8"
+                (mapClick)="onMapClick($event)"
+              >
+                <!-- El marcador ahora se maneja desde TS con AdvancedMarkerElement -->
+              </google-map>
+            </div>
+          </div>
+          <div id="textDiv" (click)="toggleEditor('description')">
+            <div>
+              <span>
+                <h2>Descripción del evento</h2>
+              </span>
+            </div>
+            <p-editor
+              id="descriptionEditor"
+              class="outsideEditor"
+              [readonly]="true"
+              [formControlName]="'eventDescription'"
+            >
+              <ng-template #header></ng-template>
+            </p-editor>
+          </div>
+        </div>
+      </form>
+    </ng-template>
+    <div id="createButtonBigDiv">
+      <div id="createButtonDiv">
+        <button
+          [disabled]="!this.form.valid || !this.imgSrc"
+          (click)="initCreateEvent()"
+          pButton
+          icon=""
+        >
+          Crear
+        </button>
+      </div>
+    </div>
+  </p-card>
+</div>
+<p-dialog
+  [header]="'Editar Objetivos'"
+  [(visible)]="showEditor"
+  [draggable]="false"
+  [closable]="true"
+  [modal]="true"
+  [style]="{ height: '80vh', width: '60vw' }"
+>
+  <div style="height: 100%">
+    <p-editor id="insideEditor" [(ngModel)]="editorContent"></p-editor>
+  </div>
+
+  <ng-template #footer>
+    <button pButton label="Cancelar" (click)="showEditor = false"></button>
+    <button pButton label="Guardar" (click)="setEditorText()"></button>
+  </ng-template>
+</p-dialog>

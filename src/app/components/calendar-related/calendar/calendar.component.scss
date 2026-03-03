@@ -1,0 +1,108 @@
+table {
+  // border: 1px solid black;
+  border-radius: 5px;
+}
+
+tr {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1lh;
+  margin-bottom: 1lh;
+}
+
+th {
+  // border: 1px solid black;
+}
+
+td {
+  width: 100%;
+  // border: 1px solid black;
+  border-radius: 14px;
+  /* Gradiente sutil */
+  background: radial-gradient(
+    ellipse at center,
+    #f8f8f8 0%,
+    /* blanco grisáceo */ #e5e5e563 100% /* gris suave al borde */
+  );
+}
+
+.day {
+  display: flex;
+  justify-content: flex-start;
+  grid-row: auto;
+  cursor: pointer;
+  width: 100%;
+  z-index: 15;
+  background: white;
+  transition: scale 0.2s ease-in-out;
+}
+
+.day:hover {
+  filter: brightness(1.75);
+  cursor: pointer;
+  scale: 1.2;
+}
+
+.today {
+  // background-color: rgba(var(--primary-color-rgb), 1);
+  color: white !important;
+}
+
+.today:hover {
+  z-index: 10;
+  scale: 1.1;
+  transition: scale 0.5s;
+  background-color: rgba(var(--primary-color-rgb), 1);
+}
+
+app-day {
+  display: block; /* hace que ocupe todo el ancho disponible */
+  width: 100%; /* asegura que rellene el contenedor */
+}
+
+#calendarBigDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  border: 1px solid black;
+  height: 100%;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.weekDay {
+  display: flex;
+  justify-content: flex-start;
+  grid-row: auto;
+  // border-bottom: 1px solid black;
+  // border-right: 1px solid black;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.subDayDiv {
+  width: 100%;
+}
+
+.subDiaDiv:hover {
+}
+
+:host ::ng-deep p-card {
+  width: 100%;
+  height: 100%;
+}
+:host ::ng-deep .p-card-content {
+  height: 100%;
+}
+
+.p-card .p-component {
+  height: 100%;
+}
+:host ::ng-deep .p-card-body {
+}

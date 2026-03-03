@@ -1,0 +1,20 @@
+<div id="listBigDiv">
+  <p-table [columns]="cols" [value]="events">
+    <ng-template #header>
+      <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Location</th>
+        <th>Signatures</th>
+      </tr>
+    </ng-template>
+    <ng-template #body let-event>
+      <tr>
+        <td>{{ event?.eventDescription?.eventName }}</td>
+        <td>{{ event?.initDate }}</td>
+        <td>{{ event?.location?.addressLabel }}</td>
+        <td>{{ event.signs }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

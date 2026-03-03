@@ -1,10 +1,11 @@
 import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigator',
   templateUrl: './navigator.component.html',
-  styleUrls: ['./navigator.component.css'],
+  styleUrls: ['./navigator.component.scss'],
   standalone: false
 }) 
 export class NavigatorComponent implements OnInit{
@@ -17,11 +18,18 @@ export class NavigatorComponent implements OnInit{
     { name: 'Cuenta', link: '/login', icon: '<i class="pi pi-times"></i>' }
   ];
   
-  constructor(){
-    console.log('NavigatorComponent initialized');  
+  constructor(
+    private router: Router
+  ){
   }
 
   ngOnInit(){
 
+  }
+
+
+  logOut(){
+    localStorage.removeItem("token");
+    this.router.navigateByUrl("/login");
   }
 }
