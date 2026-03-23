@@ -1,0 +1,30 @@
+<nav class="navbar">
+  <div id="navBarDiv">
+    <div class="logo">
+      <a [routerLink]="'/home'"> Populi Manifiesta </a>
+    </div>
+    <div id="linksDiv">
+      <ul class="nav-links">
+        <li class="profile-link">
+          <a href="/profile" class="profile-item">
+            <div class="avatar"></div>
+            <span class="name">Mi Perfil</span>
+          </a>
+        </li>
+        <li *ngFor="let item of menuItems">
+          <a href="{{ item.link }}">
+            <!-- <div class="imgDiv">
+                            <img [src]="item.icon" />
+                        </div> -->
+            {{ item.name }}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div id="logOutDiv">
+      <button pButton (click)="logOut()" id="logOutButton">
+        <i class="pi pi-sign-out"></i>
+      </button>
+    </div>
+  </div>
+</nav>
