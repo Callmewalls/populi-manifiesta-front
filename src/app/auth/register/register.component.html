@@ -8,10 +8,7 @@
   </div>
   <div id="registerBox">
     <div id="formDiv">
-      <div id="welcomeDiv">
-        <h1>Bienvenido</h1>
-      </div>
-      <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <form [formGroup]="registerForm">
         <h2>Crear cuenta</h2>
 
         <div class="form-group">
@@ -32,10 +29,20 @@
 
         <div class="form-group">
           <input
+            (blur)="logg()"
             type="password"
             placeholder="Contraseña"
             formControlName="password"
           />
+          @if (
+            registerForm.controls.password.hasError("pattern") ||
+            registerForm.controls.password.hasError("minlength")
+          ) {
+            <div class="error">
+              La contraseña debe tener 8 carácteres, una letra minúscula y
+              mayúscula y un número
+            </div>
+          }
         </div>
 
         <div class="form-group">
@@ -53,7 +60,7 @@
         </div>
 
         <div class="terms">
-          <input type="checkbox" formControlName="terms" />
+          <p-checkbox formControlName="terms" binary="true"></p-checkbox>
           <label>Acepto los términos y condiciones</label>
         </div>
         @if (errorMessage) {
@@ -62,8 +69,14 @@
           </div>
         }
 
-        <button type="submit" [disabled]="loading">
+        <button type="submit" [disabled]="loading" (click)="register()">
           {{ loading ? "Creando cuenta..." : "Registrarse" }}
+        </button>
+        <button class="google-auth-btn" (click)="registerWithGoogle()">
+          <img
+            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+          />
+          <span>Sign in with Google</span>
         </button>
       </form>
     </div>

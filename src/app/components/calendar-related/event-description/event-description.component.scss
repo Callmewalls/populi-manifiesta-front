@@ -24,6 +24,16 @@
   object-fit: contain;
 }
 
+#eventNameDiv{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#eventName{
+  font-size: 2vw;
+}
+
 #objectivesDiv {
   height: 100%;
   display: grid;
@@ -42,7 +52,7 @@
 }
 
 #objectivesPanelDiv {
-  font-size: 1rem;
+  font-size: 1vw;
   padding: 0 1lh 0 1lh;
   height: 90%;
   width: 90%;

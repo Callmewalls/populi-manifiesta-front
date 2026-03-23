@@ -1,7 +1,7 @@
 <div id="logInComponentDiv">
   <div id="topDiv">
     <div id="registryDiv">
-      <a [routerLink]="'/register'">
+      <a [routerLink]="['/auth/register']">
         <button pButton label="Registrarse"></button>
       </a>
     </div>
@@ -31,6 +31,13 @@
         <div id="buttonDiv">
           <button pButton type="submit" label="Iniciar Sesión"></button>
         </div>
+        
+        <button class="google-auth-btn" (click)="loginWithGoogle()">
+          <img
+            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+          />
+          <span>Log in with Google</span>
+        </button>
         <a href="/recover-password">¿Has olvidado tu contraseña?</a>
       </form>
     </div>

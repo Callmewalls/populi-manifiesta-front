@@ -32,7 +32,6 @@ h1{
     border: 1px solid var(--primary-color);
     padding: 1lh 1lh 1lh 1lh;
     width: 40vw;
-    height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,6 +55,10 @@ h1{
 #passwordDiv{
     width: 100%;
     margin-bottom: 1%;
+}
+
+p-checkbox{
+    margin-right: 1lh;
 }
 
 #buttonDiv{
@@ -96,4 +99,29 @@ button:disabled {
 .error {
   color: red;
   font-size: 14px;
+}
+
+.google-auth-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+  color: black;
+}
+
+.google-auth-btn:hover {
+  background: #f7f8f8;
+}
+
+.google-auth-btn img {
+  width: 18px;
+  height: 18px;
 }

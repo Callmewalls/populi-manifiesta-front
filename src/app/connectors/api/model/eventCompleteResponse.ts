@@ -9,6 +9,7 @@
  */
 import { EventDescriptionUrlResponse } from './eventDescriptionUrlResponse';
 import { Organizer } from './organizer';
+import { EventCategoryResponse } from './eventCategoryResponse';
 import { Location } from './location';
 
 
@@ -20,5 +21,6 @@ export interface EventCompleteResponse {
     locationId?: number;
     eventDescription?: EventDescriptionUrlResponse;
     location?: Location;
+    categories?: Array<EventCategoryResponse>;
 }
 

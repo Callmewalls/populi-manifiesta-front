@@ -17,6 +17,7 @@ th {
 
 td {
   width: 100%;
+  min-width: 10vw;
   // border: 1px solid black;
   border-radius: 14px;
   /* Gradiente sutil */
@@ -86,23 +87,11 @@ app-day {
   font-size: 1rem;
 }
 
-.subDayDiv {
-  width: 100%;
-}
-
 .subDiaDiv:hover {
 }
 
 :host ::ng-deep p-card {
-  width: 100%;
+  display: flex;
+  width: fit-content;
   height: 100%;
-}
-:host ::ng-deep .p-card-content {
-  height: 100%;
-}
-
-.p-card .p-component {
-  height: 100%;
-}
-:host ::ng-deep .p-card-body {
 }

@@ -1,17 +1,52 @@
 <div id="listBigDiv">
-  <p-table [columns]="cols" [value]="events">
+
+  <h1>Eventos</h1>
+
+  <div id="filters">
+    <input
+      #nameInput
+      pInputText
+      type="text"
+      placeholder="Buscar por nombre"
+      (input)="onNameSearch(dt, nameInput.value)"
+    />
+
+    <input
+      #locationInput
+      pInputText
+      type="text"
+      placeholder="Buscar por ubicación"
+      (input)="onLocationSearch(dt, locationInput.value)"
+    />
+    <input
+      #categoryInput
+      pInputText
+      type="text"
+      placeholder="Buscar por categoría"
+      (input)="onCategorySearch(dt, categoryInput.value)"
+    />
+  </div>
+  <p-table #dt [columns]="cols" [value]="events">
     <ng-template #header>
       <tr>
+        <th></th>
         <th>Name</th>
         <th>Date</th>
+        <th>Categories</th>
         <th>Location</th>
         <th>Signatures</th>
       </tr>
     </ng-template>
     <ng-template #body let-event>
       <tr>
+        <td id="imgCell"><img [src]="event?.eventDescription?.imageUrl" /></td>
         <td>{{ event?.eventDescription?.eventName }}</td>
         <td>{{ event?.initDate }}</td>
+        <td>
+          @for (category of event.categories; track $index) {
+            <p-tag>{{category.name}}</p-tag>
+          }
+        </td>
         <td>{{ event?.location?.addressLabel }}</td>
         <td>{{ event.signs }}</td>
       </tr>

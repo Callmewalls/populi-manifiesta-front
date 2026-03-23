@@ -1,3 +1,8 @@
+#mapDiv{
+  border-radius: 14px;
+  border: 5px solid black;
+}
+
 .map {
   width: 100%;
   min-height: 85vh;
@@ -5,4 +10,10 @@
 
 .gm-style-iw-d{
   width: fit-content !important;
+}
+
+google-map {
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
 }

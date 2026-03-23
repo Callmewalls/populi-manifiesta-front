@@ -9,7 +9,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = localStorage.getItem('token');
-
+    
     const authReq =
       token && req.method !== 'OPTIONS'
         ? req.clone({
@@ -22,7 +22,7 @@ export class AuthInterceptor implements HttpInterceptor {
         if (error.status === 401) {
           // Token expirado o no autorizado
           localStorage.removeItem('token'); // limpiar token
-          this.router.navigate(['/login']); // redirigir al login
+          this.router.navigate(['/auth/login']); // redirigir al login
         }
         return throwError(() => error);
       })

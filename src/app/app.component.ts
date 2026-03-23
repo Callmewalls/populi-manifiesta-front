@@ -16,16 +16,14 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     
   this.router.events.subscribe(event => {
-    
-      if (event instanceof NavigationStart && event.url != '/login'  && event.url != '/register') {
+      
+      if (event instanceof NavigationStart && event.url != '/auth/login'  && event.url != '/auth/register') {
         this.token = localStorage.getItem('token');
         
         if (this.token == null || this.token == undefined) {
-          console.log('No hay token, redirigiendo a login');
           // Puedes redirigir al login
-          this.router.navigate(['/login']);
+          this.router.navigate(['/auth/login']);
         } else {
-          console.log('Token encontrado:', this.token);
         }
       }
     });
