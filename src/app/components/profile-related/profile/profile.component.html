@@ -1,1 +1,23 @@
-<p>profile works!</p>
+<div id="profilePageDiv">
+  <p-card>
+    <div>
+      <p-tabs value="0">
+        <p-tablist>
+          <div id="tabsDiv">
+            <p-tab value="0">
+              <button pButton><i class="pi pi-user"></i></button
+            ></p-tab>
+            <p-tab value="1">
+              <button pButton><i class="pi pi-cog"></i></button
+            ></p-tab>
+          </div>
+        </p-tablist>
+        <p-tabpanels>
+          <p-tabpanel value="0">
+            <div><app-profile-manager></app-profile-manager></div>
+          </p-tabpanel>
+        </p-tabpanels>
+      </p-tabs>
+    </div>
+  </p-card>
+</div>

@@ -1,0 +1,49 @@
+#mainInfoDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#fieldsDiv{
+    margin-top: 1lh;
+}
+
+.fieldRow {
+  display: flex;
+  flex-direction: row;
+  gap: 1lh;
+  margin-bottom: 1lh;
+}
+
+.p-field {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 0.2lh;
+  }
+
+  input {
+    margin-bottom: 0.2lh;
+  }
+}
+
+::ng-deep app-file-uploader {
+  display: flex;
+
+  #imgDiv {
+    height: auto !important;
+    background-image: none !important;
+    margin: 0;
+
+    img {
+      width: 5vw;
+      height: 10vw !important;
+      backdrop-filter: none !important;
+    }
+  }
+
+  i {
+    font-size: 5vh !important;
+  }
+}

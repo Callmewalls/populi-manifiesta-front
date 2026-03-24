@@ -1,0 +1,99 @@
+<div class="p-4 profile-manager-container">
+  <h2 class="mb-4">Editar Perfil</h2>
+
+  <form
+    [formGroup]="profileForm"
+    (ngSubmit)="onSubmit()"
+    class="p-fluid p-formgrid p-grid"
+  >
+    <!-- Datos básicos -->
+    <div class="p-col-12 p-md-8">
+      <div id="mainInfoDiv">
+        <div id="fieldsDiv">
+          <div class="fieldRow">
+            <div class="p-field">
+              <label for="firstName">Nombre</label>
+              <input
+                id="firstName"
+                type="text"
+                pInputText
+                formControlName="firstName"
+              />
+              <small
+                *ngIf="
+                  profileForm.get('firstName')?.invalid &&
+                  profileForm.get('firstName')?.touched
+                "
+                class="p-error"
+              >
+                El nombre es requerido
+              </small>
+            </div>
+
+            <div class="p-field">
+              <label for="lastName">Apellido</label>
+              <input
+                id="lastName"
+                type="text"
+                pInputText
+                formControlName="lastName"
+              />
+            </div>
+          </div>
+          <div class="fieldRow">
+            <div class="p-field">
+              <label for="email">Correo electrónico</label>
+              <input
+                id="email"
+                type="email"
+                pInputText
+                formControlName="email"
+              />
+              <small
+                *ngIf="
+                  profileForm.get('email')?.invalid &&
+                  profileForm.get('email')?.touched
+                "
+                class="p-error"
+              >
+                Correo inválido
+              </small>
+            </div>
+
+            <div class="p-field">
+              <label for="phone">Teléfono</label>
+              <input id="phone" type="tel" pInputText formControlName="phone" />
+            </div>
+          </div>
+        </div>
+
+        <app-file-uploader></app-file-uploader>
+      </div>
+      <div class="p-field">
+        <label for="bio">Biografía</label>
+        <p-editor
+          formControlName="bio"
+          [style]="{ height: '120px' }"
+        ></p-editor>
+      </div>
+
+      <!-- Botones -->
+      <div class="p-d-flex p-jc-end mt-3">
+        <button
+          pButton
+          type="button"
+          label="Cancelar"
+          class="p-button-secondary mr-2"
+          (click)="onCancel()"
+        ></button>
+        <button
+          pButton
+          type="submit"
+          label="Guardar"
+          class="p-button-primary"
+          [disabled]="profileForm.invalid"
+        ></button>
+      </div>
+    </div>
+  </form>
+</div>

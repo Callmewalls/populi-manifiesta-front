@@ -5,9 +5,28 @@ import { ProfileComponent } from './profile/profile.component';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { ProfileRoutingModule } from './profile-routing.module';
+import { TabsModule } from 'primeng/tabs';
+import { ProfileManagerComponent } from './profile-manager/profile-manager.component';
+import { AvatarModule } from 'primeng/avatar';
+import { EditorModule } from 'primeng/editor';
+import { SharedModule } from '../common/shared.module';
 
 @NgModule({
-    declarations: [ProfileComponent],
-    imports: [CommonModule, ProfileRoutingModule, ButtonModule, CardModule, ReactiveFormsModule, FormsModule]
+    declarations: [
+        ProfileComponent,
+        ProfileManagerComponent
+    ],
+    imports: [
+        CommonModule, 
+        ProfileRoutingModule,
+        ButtonModule, 
+        CardModule, 
+        ReactiveFormsModule, 
+        FormsModule,
+        TabsModule,
+        AvatarModule,
+        EditorModule,
+        SharedModule
+    ]
 })
 export class ProfileModule { }
