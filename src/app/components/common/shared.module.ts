@@ -15,6 +15,7 @@ import { TableModule } from 'primeng/table';
 import { TagModule } from 'primeng/tag';
 import { EventListComponent } from 'src/app/components/event-related/event-list/event-list.component';
 import { EventManagerComponent } from 'src/app/components/event-related/event-manager/event-manager.component';
+import { FileUploaderComponent } from './file-uploader/file-uploader.component';
 
 
 @NgModule({
@@ -36,13 +37,17 @@ import { EventManagerComponent } from 'src/app/components/event-related/event-ma
         InputTextModule,
         TableModule,
         RatingModule,
-        TagModule,
+        TagModule
     ],
-    exports: [EventListComponent,
-        EventManagerComponent
+    declarations: [
+        EventListComponent,
+        EventManagerComponent,
+        FileUploaderComponent
     ],
-    declarations: [EventListComponent,
-        EventManagerComponent
+    exports: [
+        EventListComponent,
+        EventManagerComponent,
+        FileUploaderComponent
     ],
     providers: [],
 })

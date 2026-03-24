@@ -1,0 +1,79 @@
+
+#imgDiv {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 1lh;
+  margin-left: 0;
+}
+
+#imgDiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  backdrop-filter: blur(2px);
+}
+
+#imgDiv.dragover {
+  border: 2px dotted black;
+  scale: 1.2;
+  transition: scale 0.3s;
+}
+
+#imgDiv img:hover {
+  filter: brightness(1.1);
+}
+
+::ng-deep .p-fileupload-header {
+  padding: 0% !important;
+}
+
+::ng-deep .p-fileupload-content {
+  padding: 0% !important;
+}
+
+::ng-deep .p-fileupload-advanced {
+  border: none !important;
+}
+
+::ng-deep .p-fileupload-highlight {
+  scale: 1.2;
+}
+:host ::ng-deep .p-fileupload-content.p-fileupload-highlight {
+  transform: scale(1.2) !important;
+  border: none;
+}
+
+#folderDiv {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px dotted black;
+
+  button {
+    background-color: inherit !important;
+    color: black;
+    border: none;
+  }
+
+  i {
+    font-size: 10vw;
+    border: none;
+  }
+}
+
+#folderDiv.dragover {
+}
+
+#folderDiv:hover {
+  scale: 1.2;
+  transition: scale 0.3s;
+}
