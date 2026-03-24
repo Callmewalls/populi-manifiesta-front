@@ -11,78 +11,9 @@
   height: fit-content;
 }
 
-#imgDiv {
-  width: 100%;
-  height: 40vh;
+#uploaderDiv {
   grid-column: 1/3;
   grid-row: 1;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 1lh;
-  margin-left: 0;
-}
-
-#imgDiv img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  backdrop-filter: blur(2px);
-}
-
-#imgDiv.dragover {
-  border: 2px dotted black;
-}
-
-#imgDiv img:hover {
-  filter: brightness(1.1);
-}
-
-::ng-deep .p-fileupload-header {
-  padding: 0% !important;
-}
-
-::ng-deep .p-fileupload-content {
-  padding: 0% !important;
-}
-
-::ng-deep .p-fileupload-advanced {
-  border: none;
-}
-
-#folderDiv {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border: 2px dotted black;
-
-  button {
-    background-color: inherit !important;
-    color: black;
-    border: none;
-  }
-
-  i {
-    font-size: 10vw;
-    border: none;
-  }
-}
-
-#folderDiv.dragover {
-  scale: 1.2;
-  transition: scale 0.3s;
-}
-
-#folderDiv:hover {
-  scale: 1.2;
-  transition: scale 0.3s;
 }
 
 #objectivesDiv {
@@ -96,7 +27,7 @@
   border-top: 2px solid black;
 }
 
-#objectivesEditor{
+#objectivesEditor {
   margin-right: 1lh;
 }
 
@@ -105,7 +36,7 @@ h2 {
   margin-top: 0.3lh;
 }
 
-#editorDiv{
+#editorDiv {
   height: 100%;
 }
 
@@ -113,7 +44,7 @@ h2 {
   padding: 0 !important;
 }
 
-.p-editor{
+.p-editor {
   height: 100% !important;
 }
 
@@ -170,7 +101,7 @@ h2 {
   width: 100%;
 }
 
-#datesDiv{
+#datesDiv {
   display: flex;
   flex-direction: row;
   gap: 1lh;
@@ -213,8 +144,8 @@ h2 {
   }
 }
 
-#signsDiv{
-  span{
+#signsDiv {
+  span {
     font-size: 1rem;
   }
 }
@@ -226,7 +157,7 @@ h2 {
   left: 30%;
 }
 
-#mapDiv{
+#mapDiv {
   margin: 0lh 0lh 1lh 1lh;
 }
 
@@ -299,20 +230,18 @@ textarea {
 
 /* Pantallas pequeñas */
 
-.mobileDates{
-
-  ::ng-deep button{
+.mobileDates {
+  ::ng-deep button {
     padding: 0.3lh 0.5lh 0.3lh 0.5lh;
     border-radius: var(--p-datepicker-dropdown-border-radius);
   }
 
-  ::ng-deep .p-datepicker-input{
+  ::ng-deep .p-datepicker-input {
     display: none !important;
   }
 
-  ::ng-deep svg{
+  ::ng-deep svg {
     width: 1.5rem !important;
     height: auto !important;
   }
-
 }

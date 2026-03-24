@@ -19,7 +19,6 @@ export class EventManagerComponent {
 
   isMobile$!: Observable<boolean>;
 
-  isDragOver = false;
 
   // * Maps
   @ViewChild('autocompleteContainer', { static: false })
@@ -171,10 +170,10 @@ export class EventManagerComponent {
     console.log(components);
     console.log(type);
     console.log(useShortName);
-    
+
     const comp = components.find(c => c.types.includes(type));
     console.log(comp);
-    
+
     if (!comp) return null;
     return useShortName ? comp.short_name : comp.long_name;
   }
@@ -206,7 +205,7 @@ export class EventManagerComponent {
   setEditorText() {
 
     console.log(this.editorContent);
-    
+
 
     if (this.textDestiny == 'objectives') {
       this.form.controls.objectivesText.setValue(this.editorContent);
@@ -221,41 +220,7 @@ export class EventManagerComponent {
   }
 
 
-  // DRAG & DROP
-  onDragOver(event: DragEvent) {
-    event.preventDefault(); // muy importante
-    this.isDragOver = true;
-  }
 
-  onDragLeave(event: DragEvent) {
-    event.preventDefault();
-    this.isDragOver = false;
-  }
-
-  onDrop(event: DragEvent) {
-    event.preventDefault();
-    this.isDragOver = false;
-
-    const files = event.dataTransfer?.files;
-    if (files && files.length > 0) {
-      this.handleFile(files[0]);
-    }
-  }
-
-  onUpload(event: any) {
-    const file: File = event.files[0];
-    this.handleFile(file);
-  }
-
-  handleFile(file: File) {
-    this.selectedFile = file;
-
-    const reader = new FileReader();
-    reader.onload = () => {
-      this.imgSrc = reader.result as string;
-    };
-    reader.readAsDataURL(file);
-  }
 
   logChange(event) {
     this.imgSrc = URL.createObjectURL(event.srcElement.files[0]);
@@ -267,11 +232,14 @@ export class EventManagerComponent {
     this.showEditor = true;
   }
 
+  onFileSelected(file: File) {
+    this.selectedFile = file;
+  }
+
   initCreateEvent() {
     if (!this.form.valid || !this.selectedFile) return;
 
     const eventRequest: EventRequest = { ...this.form.value };
-    console.log(eventRequest);
 
     // this.selectedFile ya es un File, que es un Blob
     this.eventService.createEvent(eventRequest, this.selectedFile).subscribe({

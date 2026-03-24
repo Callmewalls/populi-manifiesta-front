@@ -9,7 +9,7 @@ import { CalendarModule } from '../calendar-related/calendar.module';
 import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { ButtonModule } from 'primeng/button';
-import { SharedModule } from 'src/app/common/services/shared.module';
+import { SharedModule } from 'src/app/components/common/shared.module';
 import { TableModule } from 'primeng/table';
 import { GoogleMapsModule } from '@angular/google-maps';
 

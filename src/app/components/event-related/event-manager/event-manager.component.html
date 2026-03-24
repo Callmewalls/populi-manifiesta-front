@@ -9,39 +9,8 @@
               [formControlName]="'eventName'"
               placeholder="Nombre del evento" />
           </div>
-          <div
-            id="imgDiv"
-            [style.background-image]="imgSrc ? 'url(' + imgSrc + ')' : 'none'"
-            (click)="imgSrc = null"
-            [class.dragover]="isDragOver"
-            (dragover)="onDragOver($event)"
-            (dragleave)="onDragLeave($event)"
-            (drop)="onDrop($event)"
-          >
-            @if (!imgSrc) {
-              <p-fileUpload
-                #fileUpload
-                name="file"
-                mode="advanced"
-                accept="image/*"
-                [auto]="true"
-                [showUploadButton]="false"
-                [showCancelButton]="false"
-                customUpload="true"
-                (uploadHandler)="onUpload($event)"
-              >
-                <ng-template #header></ng-template>
-                <ng-template #content>
-                  <div id="folderDiv">
-                    <button pButton (click)="fileUpload.choose()">
-                      <i class="pi pi-folder-plus"></i>
-                    </button>
-                  </div>
-                </ng-template>
-              </p-fileUpload>
-            } @else {
-              <img src="{{ imgSrc }}" />
-            }
+          <div id="uploaderDiv">
+            <app-file-uploader (selectedFileChange)="onFileSelected($event)"></app-file-uploader>
           </div>
           <div id="objectivesDiv" (click)="toggleEditor('objectives')">
             <div>
