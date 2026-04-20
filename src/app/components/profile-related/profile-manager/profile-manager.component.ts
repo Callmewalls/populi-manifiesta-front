@@ -28,10 +28,10 @@ export class ProfileManagerComponent {
     });
   }
 
-
   onProfileImageChange($event) {
 
   }
+
   onCancel() {
 
   }

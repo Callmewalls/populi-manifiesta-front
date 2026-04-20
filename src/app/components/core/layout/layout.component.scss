@@ -2,16 +2,18 @@
   position: absolute;
   width: fit-content;
   margin-left: 1lh;
-  top:10vh;
+  top: 3vh;
   z-index: 20;
   transition: translate 500ms ease-in-out;
+  box-shadow: 4px 4px 8px white;
+  border-radius: 14px;
 
   i {
     transition: rotate 500ms ease-in-out;
   }
 }
 
-#navButtonDiv.openButton{
+#navButtonDiv.openButton {
   transition: translate 500ms ease-in-out;
   translate: 20vw;
 
@@ -19,7 +21,6 @@
     rotate: -90deg;
     transition: rotate 500ms ease-in-out;
   }
-
 }
 
 #navDiv {

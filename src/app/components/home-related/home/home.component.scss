@@ -26,7 +26,6 @@ i {
 }
 
 ::ng-deep .p-tabpanels {
-  padding-bottom: 0 !important;
   overflow-x: auto;
   justify-content: center;
   display: flex;
@@ -61,6 +60,7 @@ p-tab {
 
 #tabsDiv {
   display: flex;
+  margin-left: 15lh;
 }
 
 #monthButtons {
@@ -119,9 +119,8 @@ p-tab {
 .closeCrossDiv {
   position: fixed;
   top: 50%;
-  right: -2rem; /* o '2%' si prefieres usar porcentaje */
-  transform: translateY(-50%); /* CENTRADO VERTICAL REAL */
-
+  right: -2rem;
+  transform: translateY(-50%);
   width: 5rem;
   height: 5rem;
   background-color: red;
@@ -130,9 +129,8 @@ p-tab {
   display: flex;
   align-items: center;
   justify-content: start;
-
-  cursor: pointer;
   z-index: 11;
+  cursor: pointer;
 
   i {
     margin-left: 1lh;

@@ -1,7 +1,13 @@
 <div id="pagediv">
-    
-    
+  <p-scrollpanel [style]="{ width: '90vw', height: '85vh' }">
     <div id="eventListDiv">
-        <app-event-list [events]="events"></app-event-list>
+      <app-event-list [events]="events"></app-event-list>
     </div>
+    <p-paginator
+        [rows]="rows"
+        [totalRecords]="totalElements"
+        [first]="first"
+        (onPageChange)="onPageChange($event)">
+    </p-paginator>
+  </p-scrollpanel>
 </div>

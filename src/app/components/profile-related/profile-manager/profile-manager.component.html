@@ -1,13 +1,12 @@
-<div class="p-4 profile-manager-container">
-  <h2 class="mb-4">Editar Perfil</h2>
+<div>
+  <h2>Editar Perfil</h2>
 
   <form
     [formGroup]="profileForm"
     (ngSubmit)="onSubmit()"
-    class="p-fluid p-formgrid p-grid"
   >
     <!-- Datos básicos -->
-    <div class="p-col-12 p-md-8">
+    <div>
       <div id="mainInfoDiv">
         <div id="fieldsDiv">
           <div class="fieldRow">
@@ -78,7 +77,7 @@
       </div>
 
       <!-- Botones -->
-      <div class="p-d-flex p-jc-end mt-3">
+      <div class="mt-3">
         <button
           pButton
           type="button"

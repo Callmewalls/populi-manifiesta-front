@@ -8,6 +8,13 @@ import { EventCompleteResponse } from 'src/app/connectors/api';
   standalone: false
 })
 export class EventListComponent implements OnInit, OnChanges {
+
+  @Input("events") events: EventCompleteResponse[] = [];
+  cols: string[] = ['Name', 'Init Date', 'Location', 'Signatures']
+
+  ngOnInit(): void {
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.events) {
       this.events = this.events.map(e => ({
@@ -15,13 +22,11 @@ export class EventListComponent implements OnInit, OnChanges {
         categoriesText: e.categories?.map(c => c.name).join(', ')
       }));
     }
+    console.log(changes);
+    
+  console.log(this.events);
   }
-
-  @Input("events") events: EventCompleteResponse[] = [];
-  cols: string[] = ['Name', 'Init Date', 'Location', 'Signatures']
-
-  ngOnInit(): void {
-  }
+  
 
   onNameSearch(table: any, value: string) {
     table.filter(value.trim(), 'eventDescription.eventName', 'contains');

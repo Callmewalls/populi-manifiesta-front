@@ -46,7 +46,7 @@ td {
 }
 
 .today {
-  // background-color: rgba(var(--primary-color-rgb), 1);
+  background-color: rgba(var(--primary-color-rgb), 1);
   color: white !important;
 }
 
@@ -94,4 +94,6 @@ app-day {
   display: flex;
   width: fit-content;
   height: 100%;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 14px;
 }
